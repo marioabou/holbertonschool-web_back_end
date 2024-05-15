@@ -1,17 +1,8 @@
-import createIteratorObject from './100-createIteratorObject';
+import asyncUploader from "./100-await";
 
-import createEmployeesObject from './11-createEmployeesObject';
-import createReportObject from './12-createReportObject';
-
-const employees = {
-  ...createEmployeesObject('engineering', ['Bob', 'Jane']),
-  ...createEmployeesObject('marketing', ['Sylvie']),
+const test = async () => {
+    const value = await asyncUploadUser();
+    console.log(value);
 };
 
-const report = createReportObject(employees);
-
-const reportWithIterator = createIteratorObject(report);
-
-for (const item of Object.keys(reportWithIterator)) {
-  console.log(item);
-}
+test();
