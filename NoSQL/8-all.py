@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-"""
-List all documents in Python
-"""
-import pymongo
+""" MongoDB Operations with Python using pymongo """
 
 
 def list_all(mongo_collection):
-    """
-    function to list all doc in a collection
-    """
-    if not mongo_collection:
-        return []
+    """ List all documents in Python """
     documents = mongo_collection.find()
-    return [post for post in documents]
+
+    if documents.count() == 0:
+        return []
+
+    return documents
